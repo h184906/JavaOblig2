@@ -17,12 +17,15 @@ public class Tabeller {
 		String streng = "[";
 		for (int i = 0; i < tabell.length; i++) {
 			String tall = Integer.toString(tabell[i]);
-			streng += tall+", ";
+			if (i != tabell.length - 1) {
+				streng += tall+",";
+			} else {
+				streng += tall;
+			}
 		}
 		streng += "]";
 
 		return streng;
-
 	}
 
 	// c)
@@ -68,18 +71,32 @@ public class Tabeller {
 
 	// g)
 	public static boolean erSortert(int[] tabell) {
+		if (tabell.length <= 1) {
+			return true;
+		}
+
 		int test = tabell[0];
-		for (int i = 1; i <tabell.length; i++) {
+		for (int i = 1; i < tabell.length; i++) {
 			if (tabell[i] < test) {
 				return false;
 			}
+			test = tabell[i];
 		}
 		return true;
 	}
 
 	// h)
 	public static int[] settSammen(int[] tabell1, int[] tabell2) {
+		int[] nyTabell = new int[tabell1.length + tabell2.length];
 
-		return 
+		for (int i = 0; i < tabell1.length; i++) {
+			nyTabell[i] = tabell1[i];
+		}
+
+		for (int i = 0; i < tabell2.length; i++) {
+			nyTabell[tabell1.length + i] = tabell2[i];
+		}
+
+		return nyTabell;
 	}
 }

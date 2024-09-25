@@ -1,5 +1,7 @@
 package no.hvl.dat100.tabeller;
 
+import org.slf4j.MDC;
+
 public class Tabeller {
 
 	// a)
@@ -49,27 +51,35 @@ public class Tabeller {
 			}
 		}
 		return -1; 
+
 	}
 
 	// f)
 	public static int[] reverser(int[] tabell) {
+		int[] nytabell = new int [tabell.length];
+		int index = tabell.length-1;
+		for (int tall: tabell) {
+			nytabell[index] = tall;
+			index--;
+		}
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden reverser ikke implementert");
+		return nytabell;
 	}
 
 	// g)
 	public static boolean erSortert(int[] tabell) {
-
-		// TODO
-		throw new UnsupportedOperationException("Metoden erSortert ikke implementert");
+		int test = tabell[0];
+		for (int i = 1; i <tabell.length; i++) {
+			if (tabell[i] < test) {
+				return false;
+			}
+		}
+		return true;
 	}
 
 	// h)
 	public static int[] settSammen(int[] tabell1, int[] tabell2) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden settSammen ikke implementert");
-
+		return 
 	}
 }

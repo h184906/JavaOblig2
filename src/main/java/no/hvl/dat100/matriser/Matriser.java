@@ -16,12 +16,8 @@ public class Matriser {
 	// b)
 	public static String tilStreng(int[][] matrise) {
 
-		for (int i=0; i<matrise.length; i++) {
-			System.out.println();
-			for (int k=0; k<matrise[i].length; k++) {
-				System.out.print(matrise[i][k]);
-			}
-		}
+		// TODO
+		throw new UnsupportedOperationException("Metoden tilStreng ikke implementert");
 		
 	}
 

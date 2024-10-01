@@ -15,40 +15,63 @@ public class Matriser {
 
 	// b)
 	public static String tilStreng(int[][] matrise) {
+		String streng = "";
+		for (int i = 0; i < matrise.length; i++) {
+			for (int j = 0; j < matrise[i].length; j++) {
+				streng += matrise[i][j]+ " ";
+			}
+			streng += "\n";
+		}
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden tilStreng ikke implementert");
-		
+		return streng;
 	}
 
 	// c)
 	public static int[][] skaler(int tall, int[][] matrise) {
-		
-		// TODO
-		throw new UnsupportedOperationException("Metoden skaler ikke implementert");
-	
+		int[][] nymatrise = new int[matrise.length][];
+		for (int i = 0; i < matrise.length; i++) {
+			nymatrise[i] = new int [matrise[i].length];
+		}
+		for (int i = 0; i < matrise.length; i++) {
+			for (int j = 0; j < matrise[i].length; j++) {
+				nymatrise[i][j] = matrise[i][j]*tall;
+			}
+		}
+		return nymatrise;
 	}
 
 	// d)
 	public static boolean erLik(int[][] a, int[][] b) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden erLik ikke implementert");
-		
+		for (int i = 0; i <a.length; i++) {
+			for (int j = 0; j < a[i].length; j++) {
+				if (a[i][j] != b[i][j] || a.length != b.length || a[i].length != b[i].length) {
+					return false;
+				}
+			}
+		}
+		return true;
 	}
 	
 	// e)
 	public static int[][] speile(int[][] matrise) {
-
-		// TODO
-
-		throw new UnsupportedOperationException("Metoden speile ikke implementert");
-	
+		int[][] nymatrise = new int[matrise.length][];
+		for (int i = 0; i < matrise.length; i++) {
+			nymatrise[i] = new int[matrise[i].length];
+		}
+		for (int i = 0; i < matrise.length; i++) {
+			int index = matrise[i].length-1;
+			for (int j = 0; j < matrise[i].length; j++) {
+				nymatrise[i][j] = matrise[i][index];
+				index --;
+			}
+		}
+		return nymatrise;
 	}
 
-	// f)
+	// f	}                                            )
 	public static int[][] multipliser(int[][] a, int[][] b) {
-
+		
 		// TODO
 		throw new UnsupportedOperationException("Metoden multipliser ikke implementert");
 	

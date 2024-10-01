@@ -60,10 +60,8 @@ public class Matriser {
 			nymatrise[i] = new int[matrise[i].length];
 		}
 		for (int i = 0; i < matrise.length; i++) {
-			int index = matrise[i].length-1;
 			for (int j = 0; j < matrise[i].length; j++) {
-				nymatrise[i][j] = matrise[i][index];
-				index --;
+				nymatrise[i][j] = matrise[j][i];
 			}
 		}
 		return nymatrise;

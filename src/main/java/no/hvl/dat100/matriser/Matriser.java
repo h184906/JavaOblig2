@@ -69,9 +69,23 @@ public class Matriser {
 
 	// f	}                                            )
 	public static int[][] multipliser(int[][] a, int[][] b) {
-		
-		// TODO
-		throw new UnsupportedOperationException("Metoden multipliser ikke implementert");
-	
+
+		if (a[0].length != b.length) {
+			System.out.println("Matrisen A har ikke same antall kolonner som B har rader");
+			return null;
+		}
+
+		int[][] nymatrise = new int[a.length][b[0].length];
+
+		for (int i = 0; i < a.length; i++) {
+			for (int j = 0; j < b[0].length; j++) {
+				for (int k = 0; k < b.length; k++) {
+					System.out.println(a[i][k] * b[k][j]);
+					nymatrise[i][j] += a[i][k] * b[k][j];
+				}
+			}
+		}
+
+		return nymatrise;
 	}
 }
